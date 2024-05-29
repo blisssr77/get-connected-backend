@@ -27,11 +27,7 @@ const getFreelancersByUser = async (req, res) => {
 // Create a new Freelancer
 const createFreelancer = async (req, res) => {
     try {
-<<<<<<< HEAD
         const { fullname, age, career, hobby, degree, location, description, experience, photoURL } = req.body;
-=======
-        const { fullname, age, career, hobby, degree, location, description, experience } = req.body;
->>>>>>> origin/main
         const photo = req.file ? req.file.path : null;
         const userId = req.user.id
         const newFreelancer = new db.Freelancer({
@@ -44,10 +40,7 @@ const createFreelancer = async (req, res) => {
             description,
             experience,
             photo,
-<<<<<<< HEAD
             photoURL,
-=======
->>>>>>> origin/main
             User: userId,
         });
 

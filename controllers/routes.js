@@ -6,21 +6,15 @@ const commentCtrl = require("./commentCtrl")
 const likedStudentCtrl = require("./likedStudentCtrl")
 const likedFreelancersCtrl = require("./likedFreelancerCtrl")
 const roleProfileCtrl = require("./roleProfileCtrl")
-<<<<<<< HEAD
 const express = require('express')
 const app = express()
 const path = require('path')
-=======
->>>>>>> origin/main
 
 const upload = require("../middleware/upload")
 const { verifyToken } = require("../middleware/verifyToken")
 
-<<<<<<< HEAD
 router.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
-=======
->>>>>>> origin/main
 // user routes
 router.post("/auth/loginsignup", userCtrl.signup)
 router.post("/auth/signup", userCtrl.signup)

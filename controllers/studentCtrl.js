@@ -29,11 +29,7 @@ const getStudentsByUser = async (req, res) => {
 // Create a new Student
 const createStudent = async (req, res) => {
     try {
-<<<<<<< HEAD
         const { fullname, age, career, hobby, description, location, photoURL } = req.body;
-=======
-        const { fullname, age, career, hobby, description, location } = req.body;
->>>>>>> origin/main
         const photo = req.file ? req.file.path : null;
         const userId = req.user.id;
         const newStudent = new db.Student({
@@ -43,12 +39,8 @@ const createStudent = async (req, res) => {
             hobby,
             description,
             location,
-<<<<<<< HEAD
             photo: photo,
             photoURL,
-=======
-            photo,
->>>>>>> origin/main
             User: userId,
         });
 

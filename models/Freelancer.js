@@ -10,10 +10,7 @@ const freelancerSchema = new mongoose.Schema({
     location: { type: String, required: true },
     description: { type: String, required: true },
     experience: { type: String, required: true },
-<<<<<<< HEAD
     photoURL: { type: String, required: false },
-=======
->>>>>>> origin/main
     photo: { type: String, required: false },
     User: { type: mongoose.Schema.Types.ObjectId, ref: 'User'},
 }, { timestamps: true });
