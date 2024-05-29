@@ -60,9 +60,4 @@ router.post('/liked-freelancers', likedFreelancersCtrl.likeFreelancer)
 router.delete('/liked-students/:studentId', likedStudentCtrl.deleteLikedStudent)
 router.delete('/liked-freelancers/:freelancerId', likedFreelancersCtrl.deleteLikedFreelancer)
 
-
-
-
-
-
 module.exports = router;
