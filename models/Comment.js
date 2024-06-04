@@ -3,12 +3,12 @@ const User = require('./User');
 const Student = require('./Student');
 const Freelancer = require('./Freelancer');
 
-CommentSchema = new mongoose.Schema({
+const commentSchema = new mongoose.Schema({
     content: { type: String, required: true },
     User: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
-    Student: { type: mongoose.Schema.Types.ObjectId, ref: 'Student' },
-    Freelancer: { type: mongoose.Schema.Types.ObjectId, ref: 'Freelancer' },
+    studentId: { type: mongoose.Schema.Types.ObjectId, ref: 'Student', required: false},
+    freelancerId: { type: mongoose.Schema.Types.ObjectId, ref: 'Freelancer', required: false},
 }, { timestamps: true });
 
-module.exports = mongoose.model('Comment', CommentSchema);
+module.exports = mongoose.model('Comment', commentSchema);
     

@@ -6,6 +6,7 @@ const commentCtrl = require("./commentCtrl")
 const likedStudentCtrl = require("./likedStudentCtrl")
 const likedFreelancersCtrl = require("./likedFreelancerCtrl")
 const roleProfileCtrl = require("./roleProfileCtrl")
+
 const express = require('express')
 const app = express()
 const path = require('path')
@@ -37,18 +38,8 @@ router.put('/freelancers/:id', freelancerCtrl.updateFreelancer);
 router.delete('/freelancers/:id', freelancerCtrl.deleteFreelancer);
 // router.post('/freelancers', verifyToken, upload.single('photo'), freelancerCtrl.createFreelancer);
 
-// Comment Routes below
-router.get('/students/:id/comments', commentCtrl.getCommentsByStudent);
-router.post('/comments/:id', commentCtrl.createComment);
-router.put('/comments/:id', commentCtrl.updateComment);
-router.delete('/comments/:id', commentCtrl.deleteComment);
-
-// router.get('/freelancers/:id/comments', commentCtrl.getComments);
-router.post('/freelancers/:id/comments', commentCtrl.createComment);
-
 // Role Profile Routes below
 router.get('/role-profile', roleProfileCtrl.getRoleProfile)
-// router.post('/role-profile', studentCtrl.createStudent)
 router.put('/role-profile/:id', studentCtrl.deleteStudent)
 router.put('/role-profile/:id', freelancerCtrl.deleteFreelancer)
 
@@ -59,5 +50,17 @@ router.get('/liked-freelancers', likedFreelancersCtrl.getLikedFreelancers)
 router.post('/liked-freelancers', likedFreelancersCtrl.likeFreelancer)
 router.delete('/liked-students/:studentId', likedStudentCtrl.deleteLikedStudent)
 router.delete('/liked-freelancers/:freelancerId', likedFreelancersCtrl.deleteLikedFreelancer)
+
+// Comments for students
+router.get('/students/:id/comments', commentCtrl.getComments);
+router.post('/students/:id/comments', commentCtrl.createComment);
+
+// Comments for freelancers
+router.get('/freelancers/:id/comments', commentCtrl.getComments);
+router.post('/freelancers/:id/comments', commentCtrl.createComment);
+
+// Update and delete comments
+router.put('/comments/:commentId', commentCtrl.updateComment);
+router.delete('/comments/:commentId', commentCtrl.deleteComment);
 
 module.exports = router;

@@ -20,4 +20,5 @@ module.exports = {
     Student: require("./Student"),
     LikedStudent: require("./LikedStudent"),
     LikedFreelancer: require("./LikedFreelancer"),
+    Comment: require("./Comment"),
 }
